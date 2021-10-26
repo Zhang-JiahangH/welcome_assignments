@@ -31,6 +31,10 @@ run your rrt planner 5 times. You should show that your planner can generate a c
 robot from the initial pos to the sampled target pos. You should also show your planner can deal with the situation where the sampled 
 target pos is in collision with one obstacle so that it is invalid.
 
+**Comment: ** For this part, in order to check the collision efficiently, import the env and utils. To record the path nodes, create a new class called node in rrt.py and implement some helper functions
+
+** visualized outcomes are stored in (result) **
+
 
 
 

@@ -1,7 +1,7 @@
 import matplotlib.pyplot as plt
 import numpy as np
 
-from rrt.robot import Robot, Obstacle
+from robot import Robot, Obstacle
 
 
 class World(object):
@@ -14,7 +14,15 @@ class World(object):
     def visualize(self):
         """With this function we can print the world with all obstacles and the robot if there is any."""
         # student implements it.
-        pass
+        for i in self.obs_lst:
+            i.draw(self.world_map)
+        for j in self.robot_lst:
+            j.draw(self.world_map) 
+        plt.set_cmap("gist_rainbow")
+        plt.imshow(self.world_map, interpolation='none')
+        ax = plt.gca()
+        ax.xaxis.set_ticks_position('top')
+        plt.savefig('rrt/result/step1.png')
 
     def add_obs(self, obs):
         self.obs_lst.append(obs)
@@ -33,5 +41,4 @@ if __name__ == '__main__':
     world.add_obs(obs2)
     robot0 = Robot((100, 100))
     world.add_robot(robot0)
-    world.visualize()
     world.visualize()

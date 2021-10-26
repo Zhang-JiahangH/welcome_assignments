@@ -1,6 +1,6 @@
 from env import World
+from utils import check_collision
 from robot import Obstacle, Robot
-from rrt.utils import check_collision
 
 if __name__ == '__main__':
     world = World()
@@ -24,4 +24,4 @@ if __name__ == '__main__':
     # set the robot to a new pos
     robot0.reset_pos((25, 300))
     world.visualize()
-    assert check_collision(robot0, obs1)
+    assert  check_collision(robot0, obs1)
